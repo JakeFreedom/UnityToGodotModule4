@@ -1,0 +1,41 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "F:\\Repos\\UnityToGodotModule4\\ball-movement\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{95EBAE5D-B492-4259-8BAD-8EBD32118543}|BallMovement.csproj|f:\\repos\\unitytogodotmodule4\\ball-movement\\ballscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{95EBAE5D-B492-4259-8BAD-8EBD32118543}|BallMovement.csproj|solutionrelative:ballscript.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 1,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{116d2292-e37d-41cd-a077-ebacac4c8cc4}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BallScript.cs",
+              "DocumentMoniker": "F:\\Repos\\UnityToGodotModule4\\ball-movement\\BallScript.cs",
+              "RelativeDocumentMoniker": "BallScript.cs",
+              "ToolTip": "F:\\Repos\\UnityToGodotModule4\\ball-movement\\BallScript.cs",
+              "RelativeToolTip": "BallScript.cs",
+              "ViewState": "AgIAABMAAAAAAAAAAAAywCwAAAAmAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2026-03-13T19:10:27.547Z",
+              "EditorCaption": ""
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}
