@@ -14,6 +14,43 @@ radius = 30.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_evaa2"]
 
+[sub_resource type="Animation" id="Animation_2ofdd"]
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RigidBody2D/Sprite2D:material:shader_parameter/dissolve_pct")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_mkae4"]
+resource_name = "dissolve"
+length = 0.3
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("RigidBody2D/Sprite2D:material:shader_parameter/dissolve_pct")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.29999995),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [0.0, 1.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_xpx1t"]
+_data = {
+&"RESET": SubResource("Animation_2ofdd"),
+&"dissolve": SubResource("Animation_mkae4")
+}
+
 [node name="DroppedObject" type="Node2D" unique_id=626079247 groups=["Ball"]]
 script = ExtResource("1_evaa2")
 
@@ -29,7 +66,6 @@ texture = ExtResource("1_b5fsu")
 shape = SubResource("CircleShape2D_55j04")
 
 [node name="Area2D" type="Area2D" parent="RigidBody2D" unique_id=975288560]
-visible = false
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D/Area2D" unique_id=1245759672]
 shape = SubResource("CircleShape2D_evaa2")
@@ -43,3 +79,6 @@ text = "[96]"
 label_settings = SubResource("LabelSettings_evaa2")
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="." unique_id=388519305]
+libraries/ = SubResource("AnimationLibrary_xpx1t")

@@ -28,8 +28,12 @@ public partial class PlayerSprite : CharacterBody2D
 
 	private void ObjectEntered(Area2D otherObject)
 	{
+		GD.Print(otherObject.Name);
 		EmitSignal(SignalName.ItemCaught, ((DroppedObject)otherObject.Owner).CurrentHealth+1);
-		otherObject.Owner.QueueFree();
+		otherObject.Owner.GetNode<AnimationPlayer>("AnimationPlayer").Play("dissolve");
+
+		//otherObject.Owner.CallDeferred("QueueFree");
+
 	}
 
 	private float CheckForSpeedBoost(float Speed) {

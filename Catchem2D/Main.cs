@@ -16,11 +16,6 @@ public partial class Main : Node2D
 		score.Text = playerScore.ToString();
 	}
 
-	// Called every frame. 'delta' is the elapsed time since the previous frame.
-	public override void _Process(double delta)
-	{
-	}
-
 	private void ChangeScore(int scoreToAdd) {
 
 		playerScore += scoreToAdd;
