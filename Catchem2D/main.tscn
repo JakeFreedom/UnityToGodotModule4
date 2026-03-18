@@ -7,7 +7,6 @@
 [ext_resource type="Script" uid="uid://c2sh17xy7ccdm" path="res://ObjectSpawnerConfig.cs" id="5_272bh"]
 [ext_resource type="PackedScene" uid="uid://dxwtjs2ccn30f" path="res://dropped_object.tscn" id="6_5vw27"]
 [ext_resource type="PackedScene" uid="uid://3mbjk0tiknig" path="res://GameManager.tscn" id="6_7mycd"]
-[ext_resource type="Script" uid="uid://c3pnnmh4nwqmb" path="res://SpawnTimerConfig.cs" id="7_5vw27"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_0xm2m"]
 size = Vector2(144, 722.5)
@@ -22,11 +21,6 @@ spawnLocations = 15
 spawnedObjectThresholdForBurst = 15
 objectsToBurstSpawn = 16
 metadata/_custom_type_script = "uid://c2sh17xy7ccdm"
-
-[sub_resource type="Resource" id="Resource_4c57u"]
-script = ExtResource("7_5vw27")
-TimeBetweenDrops = 1.0
-metadata/_custom_type_script = "uid://c3pnnmh4nwqmb"
 
 [sub_resource type="LabelSettings" id="LabelSettings_lquwl"]
 font_size = 50
@@ -65,10 +59,10 @@ collision_mask = 8
 position = Vector2(-2, -280)
 shape = SubResource("RectangleShape2D_lquwl")
 
-[node name="ObjectSpawner" parent="." unique_id=291370732 instance=ExtResource("2_h2yge")]
+[node name="ObjectSpawner" parent="." unique_id=291370732 node_paths=PackedStringArray("sprites") instance=ExtResource("2_h2yge")]
 position = Vector2(-2, 0)
+sprites = []
 config = SubResource("Resource_kek77")
-timerConfig = SubResource("Resource_4c57u")
 
 [node name="ObjectDeSpawner" parent="." unique_id=567913549 instance=ExtResource("4_1bvp3")]
 position = Vector2(960, 1113)

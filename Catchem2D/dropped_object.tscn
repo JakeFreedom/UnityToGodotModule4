@@ -2,9 +2,22 @@
 
 [ext_resource type="Texture2D" uid="uid://nxa8o8h7llub" path="res://Assests/droppedObject1.png" id="1_b5fsu"]
 [ext_resource type="Script" uid="uid://cxf04mfcxu0ca" path="res://DroppedObject.cs" id="1_evaa2"]
+[ext_resource type="Shader" uid="uid://cdft6v8djh1r5" path="res://dissovle.gdshader" id="2_1hvho"]
+[ext_resource type="Texture2D" uid="uid://dq48vv7xfko00" path="res://Assests/BlueCatchemBall.png" id="3_4q0wl"]
+[ext_resource type="Texture2D" uid="uid://bsfqwiupm0eko" path="res://Assests/CatchemBallOrange.png" id="4_1hvho"]
 
 [sub_resource type="PhysicsMaterial" id="PhysicsMaterial_evaa2"]
 bounce = 0.56
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1hvho"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_055rk"]
+noise = SubResource("FastNoiseLite_1hvho")
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_2ofdd"]
+shader = ExtResource("2_1hvho")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_055rk")
+shader_parameter/dissolve_pct = 0.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_55j04"]
 radius = 30.0
@@ -14,8 +27,8 @@ radius = 30.0
 
 [sub_resource type="LabelSettings" id="LabelSettings_evaa2"]
 
-[sub_resource type="Animation" id="Animation_2ofdd"]
-length = 0.3
+[sub_resource type="Animation" id="Animation_1hvho"]
+length = 0.001
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -23,15 +36,15 @@ tracks/0/path = NodePath("RigidBody2D/Sprite2D:material:shader_parameter/dissolv
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0.3),
+"times": PackedFloat32Array(0),
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [0.0]
 }
 
-[sub_resource type="Animation" id="Animation_mkae4"]
-resource_name = "dissolve"
-length = 0.3
+[sub_resource type="Animation" id="Animation_055rk"]
+resource_name = "new_animation"
+length = 0.2
 tracks/0/type = "value"
 tracks/0/imported = false
 tracks/0/enabled = true
@@ -39,7 +52,7 @@ tracks/0/path = NodePath("RigidBody2D/Sprite2D:material:shader_parameter/dissolv
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
 tracks/0/keys = {
-"times": PackedFloat32Array(0, 0.29999995),
+"times": PackedFloat32Array(0, 0.2),
 "transitions": PackedFloat32Array(1, 1),
 "update": 0,
 "values": [0.0, 1.0]
@@ -47,12 +60,27 @@ tracks/0/keys = {
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_xpx1t"]
 _data = {
-&"RESET": SubResource("Animation_2ofdd"),
-&"dissolve": SubResource("Animation_mkae4")
+&"RESET": SubResource("Animation_1hvho"),
+&"new_animation": SubResource("Animation_055rk")
 }
 
-[node name="DroppedObject" type="Node2D" unique_id=626079247 groups=["Ball"]]
+[node name="DroppedObject" type="Node2D" unique_id=626079247 node_paths=PackedStringArray("sprites") groups=["Ball"]]
 script = ExtResource("1_evaa2")
+sprites = [NodePath("AvailableSprites/Green"), NodePath("AvailableSprites/Blue"), NodePath("AvailableSprites/Orange")]
+
+[node name="AvailableSprites" type="Node2D" parent="." unique_id=940452136]
+
+[node name="Green" type="Sprite2D" parent="AvailableSprites" unique_id=1746232123]
+visible = false
+texture = ExtResource("1_b5fsu")
+
+[node name="Blue" type="Sprite2D" parent="AvailableSprites" unique_id=614493824]
+visible = false
+texture = ExtResource("3_4q0wl")
+
+[node name="Orange" type="Sprite2D" parent="AvailableSprites" unique_id=39226293]
+visible = false
+texture = ExtResource("4_1hvho")
 
 [node name="RigidBody2D" type="RigidBody2D" parent="." unique_id=1793727523]
 collision_mask = 3
@@ -60,7 +88,7 @@ physics_material_override = SubResource("PhysicsMaterial_evaa2")
 gravity_scale = 0.0
 
 [node name="Sprite2D" type="Sprite2D" parent="RigidBody2D" unique_id=90194477]
-texture = ExtResource("1_b5fsu")
+material = SubResource("ShaderMaterial_2ofdd")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="RigidBody2D" unique_id=103482269]
 shape = SubResource("CircleShape2D_55j04")

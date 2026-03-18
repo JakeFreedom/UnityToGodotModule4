@@ -6,6 +6,7 @@ public partial class DroppedObject : Node2D
 
 
 	[Export] float fallingSpeed = 100;
+	[Export] Sprite2D[] sprites;
 
 	//RandomNumberGenerator rng = new RandomNumberGenerator();
 	int ballHealth;
@@ -14,6 +15,7 @@ public partial class DroppedObject : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
+		GD.Print(sprites.Length);
 		//rng.Randomize();
 		fallingSpeed = GameManager.GetRandf(2, 10);
 		this.Name = $"Speed{fallingSpeed}";
@@ -22,7 +24,11 @@ public partial class DroppedObject : Node2D
 		ballHealth = GameManager.GetRandI(5, 15);
 		ballHealthLabel = GetNode<Label>("RigidBody2D/Label");
 		ballHealthLabel.Text = ballHealth.ToString();
-		
+
+		//Set the random sprite here
+		Sprite2D spawn = GetNode<Sprite2D>("RigidBody2D/Sprite2D");
+		if(spawn != null)
+			spawn.Texture = sprites[GameManager.GetRandI(0, sprites.Length - 1)].Texture;
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -35,12 +41,12 @@ public partial class DroppedObject : Node2D
 		
 	}
 
-	public void SetSprite(Sprite2D sprite)
-	{
-		GetNode<Sprite2D>("RigidBody2D/Sprite2D").Texture = sprite.Texture;
-		GetNode<Sprite2D>("RigidBody2D/Sprite2D").Scale = new Vector2(.75f, .75f);
+	//public void SetSprite(Sprite2D sprite)
+	//{
+	//	GetNode<Sprite2D>("RigidBody2D/Sprite2D").Texture = sprite.Texture;
+	//	GetNode<Sprite2D>("RigidBody2D/Sprite2D").Scale = new Vector2(.75f, .75f);
 
-    }
+ //   }
 
 	private void AreaEnteredHandler(Area2D otherArea) {
 		ballHealth -= 1;
