@@ -1,0 +1,13 @@
+[gd_resource type="ShaderMaterial" format=3 uid="uid://cckqlrpyuwnyl"]
+
+[ext_resource type="Shader" uid="uid://cdft6v8djh1r5" path="res://dissovle.gdshader" id="1_50bgh"]
+
+[sub_resource type="FastNoiseLite" id="FastNoiseLite_1hvho"]
+
+[sub_resource type="NoiseTexture2D" id="NoiseTexture2D_055rk"]
+noise = SubResource("FastNoiseLite_1hvho")
+
+[resource]
+shader = ExtResource("1_50bgh")
+shader_parameter/noise_tex = SubResource("NoiseTexture2D_055rk")
+shader_parameter/dissolve_pct = 0.0

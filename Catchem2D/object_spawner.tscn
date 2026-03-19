@@ -1,7 +1,8 @@
 [gd_scene format=3 uid="uid://46gbg3v5flls"]
 
 [ext_resource type="Script" uid="uid://cux60wdt1u5o" path="res://ObjectSpawner.cs" id="1_txpvb"]
+[ext_resource type="Material" uid="uid://cckqlrpyuwnyl" path="res://new_shader_material.tres" id="2_14q8r"]
 
-[node name="ObjectSpawner" type="Node2D" unique_id=1147571514 node_paths=PackedStringArray("sprites")]
+[node name="ObjectSpawner" type="Node2D" unique_id=1147571514]
 script = ExtResource("1_txpvb")
-sprites = [NodePath(""), NodePath(""), NodePath("")]
+ShaderMaterial = ExtResource("2_14q8r")

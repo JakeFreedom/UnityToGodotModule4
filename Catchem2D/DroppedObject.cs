@@ -15,7 +15,6 @@ public partial class DroppedObject : Node2D
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
-		GD.Print(sprites.Length);
 		//rng.Randomize();
 		fallingSpeed = GameManager.GetRandf(2, 10);
 		this.Name = $"Speed{fallingSpeed}";

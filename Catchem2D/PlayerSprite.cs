@@ -31,7 +31,7 @@ public partial class PlayerSprite : CharacterBody2D
 		GD.Print(otherObject.Owner.Name);
 		EmitSignal(SignalName.ItemCaught, ((DroppedObject)otherObject.Owner).CurrentHealth+1);
 		otherObject.Owner.GetNode<RigidBody2D>("RigidBody2D").FreezeMode = RigidBody2D.FreezeModeEnum.Static;
-		//otherObject.Owner.GetNode<AnimationPlayer>("AnimationPlayer").Play("new_animation");
+		otherObject.Owner.GetNode<AnimationPlayer>("AnimationPlayer").Play("new_animation");
 
 		((DroppedObject)otherObject.Owner).Visible = false;
 

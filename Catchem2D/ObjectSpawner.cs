@@ -4,6 +4,7 @@ using System;
 public partial class ObjectSpawner : Node2D
 {
 	[Export] ObjectSpawnerConfig config;
+	[Export] ShaderMaterial ShaderMaterial;
 
 	Timer spawnTimer;
 	int spawnedObjects = 0;
@@ -37,6 +38,8 @@ public partial class ObjectSpawner : Node2D
 		//Spawn Range is 1920/4 = 0 -- 480 -- 960 -- 1440 -- 1920
 		DroppedObject droppedObject = config.spawnObject.Instantiate<DroppedObject>();
 		droppedObject.Name = droppedObject.Name + x.ToString();
+		Material mat = ((Material)droppedObject.Material.Duplicate(true));
+		droppedObject.Material = mat;
 		
 		x++;
 		//droppedObject.SetSprite((Sprite2D)sprites.GetValue(GameManager.GetRandI(0, sprites.Length - 1)));
