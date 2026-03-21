@@ -15,7 +15,7 @@ public partial class GameManager : Node3D
         Vector2 screenSize = GetViewport().GetVisibleRect().Size;
         //Create a margin around the viewport.
         screenSize.X -= 150;
-        screenSize.Y -= 150;
+        screenSize.Y -= 250;
         List<Vector2> spawnPoints = new List<Vector2>();
         bool checkForOverLap = true;
         for (int i = 0; i < obstaclesToSpawn; i++)

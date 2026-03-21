@@ -12,6 +12,7 @@ public partial class DroppedObject : Node2D
 	int ballHealth;
 	Label ballHealthLabel;
 	Area2D hitBox;
+	bool isAlive = true;
 	// Called when the node enters the scene tree for the first time.
 	public override void _Ready()
 	{
@@ -35,7 +36,8 @@ public partial class DroppedObject : Node2D
 	{
 
 		//Position += new Vector2(0, fallingSpeed);
-		GetNode<RigidBody2D>("RigidBody2D").ConstantForce = new Vector2(0, 250);
+		if(isAlive)
+			GetNode<RigidBody2D>("RigidBody2D").ConstantForce = new Vector2(0, 250);
 
 		
 	}
@@ -58,4 +60,6 @@ public partial class DroppedObject : Node2D
 	{
 		get => ballHealth;
 	}
+
+	public bool Alive { get=>isAlive; set { isAlive = value; GetNode<RigidBody2D>("RigidBody2D").ConstantForce = new Vector2(0, 0); } } 
 }

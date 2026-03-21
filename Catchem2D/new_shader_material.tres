@@ -8,6 +8,7 @@
 noise = SubResource("FastNoiseLite_1hvho")
 
 [resource]
+resource_local_to_scene = true
 shader = ExtResource("1_50bgh")
 shader_parameter/noise_tex = SubResource("NoiseTexture2D_055rk")
 shader_parameter/dissolve_pct = 0.0

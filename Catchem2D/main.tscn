@@ -36,7 +36,7 @@ score = NodePath("CanvasLayer/HBoxContainer/PlayerScore")
 obstaclesToSpawn = 15
 
 [node name="Player" parent="." unique_id=1938720793 instance=ExtResource("1_ig7tw")]
-position = Vector2(654, 678)
+position = Vector2(654, 615)
 
 [node name="Camera2D" type="Camera2D" parent="." unique_id=124280895]
 position = Vector2(641, 361)
@@ -59,10 +59,10 @@ collision_mask = 8
 position = Vector2(-2, -280)
 shape = SubResource("RectangleShape2D_lquwl")
 
-[node name="ObjectSpawner" parent="." unique_id=291370732 node_paths=PackedStringArray("sprites") instance=ExtResource("2_h2yge")]
+[node name="ObjectSpawner" parent="." unique_id=291370732 instance=ExtResource("2_h2yge")]
 position = Vector2(-2, 0)
-sprites = []
 config = SubResource("Resource_kek77")
+ShaderMaterial = null
 
 [node name="ObjectDeSpawner" parent="." unique_id=567913549 instance=ExtResource("4_1bvp3")]
 position = Vector2(960, 1113)
@@ -74,8 +74,8 @@ scale = Vector2(98, 1)
 anchors_preset = 1
 anchor_left = 1.0
 anchor_right = 1.0
-offset_left = -105.0
-offset_bottom = 23.0
+offset_left = -504.0
+offset_bottom = 69.0
 grow_horizontal = 0
 
 [node name="ScoreLabel" type="Label" parent="CanvasLayer/HBoxContainer" unique_id=580196410]
