@@ -1,3 +1,5 @@
+using Catchem2D;
+using Catchem2D.Events;
 using Godot;
 
 public partial class PlayerSprite : CharacterBody2D
@@ -6,7 +8,17 @@ public partial class PlayerSprite : CharacterBody2D
 	[Export] float BoostSpeed = 4000.0f;
 
 	[Signal] public delegate void ItemCaughtEventHandler(int score);
-    public override void _Ready() => GetNode<Area2D>("Area2D").AreaEntered += ObjectEntered;
+	public override void _Ready()
+	{
+		GetNode<Area2D>("Area2D").AreaEntered += ObjectEntered;
+		//GameConfig.Instance.GetBus().Subscribe<BallCaughtEvent>(OnBallCaught);
+	}
+
+
+	public void OnBallCaught(BallCaughtEvent evt) {
+
+		GD.Print("Ball caught");
+	}
 
 	public override void _PhysicsProcess(double delta)
 	{
@@ -33,10 +45,8 @@ public partial class PlayerSprite : CharacterBody2D
 		//otherObject.Owner.GetNode<RigidBody2D>("RigidBody2D").Freeze = true;
 		otherObject.Owner.GetNode<AnimationPlayer>("AnimationPlayer").Play("new_animation");
 		((DroppedObject)otherObject.Owner).Alive = false;
+		GameConfig.Instance.GetBus().Publish<BallCaughtEvent>(new BallCaughtEvent(otherObject.Owner.Name));
 
-		//((DroppedObject)otherObject.Owner).Visible = false;
-
-		//otherObject.Owner.QueueFree();
 
 	}
 

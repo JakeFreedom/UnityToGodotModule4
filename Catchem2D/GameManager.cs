@@ -1,4 +1,7 @@
+using Catchem2D;
+using Catchem2D.Events;
 using Godot;
+using System;
 using System.Collections.Generic;
 
 public partial class GameManager : Node3D
@@ -9,6 +12,9 @@ public partial class GameManager : Node3D
 
     //Timer spawnTimer;
     static RandomNumberGenerator rng = new RandomNumberGenerator();
+
+    Boolean isGameOver = false;
+    AnimationPlayer moveText;
 
     public override void _Ready()
     {
@@ -48,6 +54,27 @@ public partial class GameManager : Node3D
             AddChild(obstacle);
         }
 
+        GameConfig.Instance.GetBus().Subscribe<BallCaughtEvent>(OnBallCaught);
+        GameConfig.Instance.GetBus().Subscribe<GameOverEvent>(OnGameOver);
+        moveText = GetNode<AnimationPlayer>("../CanvasLayer/MoveTextPlayer");
+    }
+
+    private void OnGameOver(GameOverEvent gameOverEvent) {
+
+        GD.Print("Game Over, Move Text to the center of the screen");
+        //get the text container and move it to the center of the screen
+        moveText.Play("MoveTextToCenterOfScreen");
+        moveText.AnimationFinished += MoveText_AnimationFinished;
+    }
+
+    private void MoveText_AnimationFinished(StringName animName)
+    {
+        GetTree().Paused = true;
+    }
+
+    public void OnBallCaught(BallCaughtEvent evt)
+    {
+        GD.Print($"Game Manager --- Ball caught {evt.BallName}");
     }
 
     /// <summary>

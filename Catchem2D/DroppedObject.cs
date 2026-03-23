@@ -1,3 +1,5 @@
+using Catchem2D;
+using Catchem2D.Events;
 using Godot;
 using System;
 
@@ -29,6 +31,8 @@ public partial class DroppedObject : Node2D
 		Sprite2D spawn = GetNode<Sprite2D>("RigidBody2D/Sprite2D");
 		if(spawn != null)
 			spawn.Texture = sprites[GameManager.GetRandI(0, sprites.Length - 1)].Texture;
+
+		//GameConfig.Instance.GetBus().Publish<BallCaughtEvent>(new BallCaughtEvent());
 	}
 
 	// Called every frame. 'delta' is the elapsed time since the previous frame.

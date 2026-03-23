@@ -1,3 +1,4 @@
+using Catchem2D;
 using Godot;
 using System;
 
@@ -8,6 +9,7 @@ public partial class objDespawner : Area2D
 	{
 		//this.BodyEntered += ObjectEntered;
 		this.AreaEntered += ObjectEntered;
+		
 
 	}
 
@@ -19,5 +21,6 @@ public partial class objDespawner : Area2D
 
 	private void ObjectEntered(Node2D otherBody) {
 		otherBody.Owner.QueueFree();
+		GameConfig.Instance.GetBus().Publish<GameOverEvent>(new GameOverEvent());
 	}
 }
