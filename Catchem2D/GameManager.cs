@@ -15,7 +15,7 @@ public partial class GameManager : Node3D
 
     Boolean isGameOver = false;
     AnimationPlayer moveText;
-
+    int playerFinalScore = 0;
     public override void _Ready()
     {
         Vector2 screenSize = GetViewport().GetVisibleRect().Size;
@@ -59,17 +59,37 @@ public partial class GameManager : Node3D
         moveText = GetNode<AnimationPlayer>("../CanvasLayer/MoveTextPlayer");
     }
 
+    double countDownDelay = 0;
+    public override void _Process(double delta)
+    {
+        if(isGameOver && playerFinalScore >= 0)
+        {
+            if (countDownDelay > .3)
+            {
+                countDownDelay = 0;
+                GetNode<Label>("../CanvasLayer/HBoxContainer/PlayerScore").Text = playerFinalScore--.ToString();
+            }
+
+            countDownDelay += delta;
+            GD.Print(playerFinalScore);
+        }
+    }
+
     private void OnGameOver(GameOverEvent gameOverEvent) {
 
-        GD.Print("Game Over, Move Text to the center of the screen");
+        //GD.Print("Game Over, Move Text to the center of the screen");
         //get the text container and move it to the center of the screen
         moveText.Play("MoveTextToCenterOfScreen");
         moveText.AnimationFinished += MoveText_AnimationFinished;
+        playerFinalScore = Int32.Parse(GetNode<Label>("../CanvasLayer/HBoxContainer/PlayerScore").Text);
+        
     }
 
     private void MoveText_AnimationFinished(StringName animName)
     {
-        GetTree().Paused = true;
+        //GetTree().Paused = true;
+        //Get the score and count it down
+        isGameOver = true;
     }
 
     public void OnBallCaught(BallCaughtEvent evt)

@@ -1,6 +1,7 @@
 using Catchem2D;
 using Catchem2D.Events;
 using Godot;
+using System;
 
 public partial class PlayerSprite : CharacterBody2D
 {
@@ -8,10 +9,13 @@ public partial class PlayerSprite : CharacterBody2D
 	[Export] float BoostSpeed = 4000.0f;
 
 	[Signal] public delegate void ItemCaughtEventHandler(int score);
+
+	Boolean isEnabled = true;
 	public override void _Ready()
 	{
 		GetNode<Area2D>("Area2D").AreaEntered += ObjectEntered;
 		//GameConfig.Instance.GetBus().Subscribe<BallCaughtEvent>(OnBallCaught);
+		GameConfig.Instance.GetBus().Subscribe<GameOverEvent>(OnGameOver);
 	}
 
 
@@ -35,12 +39,13 @@ public partial class PlayerSprite : CharacterBody2D
 			velocity.X = Mathf.MoveToward(Velocity.X, 0, Speed);
 
 		Velocity = velocity;
-		MoveAndSlide();
+		if(isEnabled)
+			MoveAndSlide();
 	}
 
 	private void ObjectEntered(Area2D otherObject)
 	{
-		GD.Print(otherObject.Owner.Name);
+		//GD.Print(otherObject.Owner.Name);
 		EmitSignal(SignalName.ItemCaught, ((DroppedObject)otherObject.Owner).CurrentHealth+1);
 		//otherObject.Owner.GetNode<RigidBody2D>("RigidBody2D").Freeze = true;
 		otherObject.Owner.GetNode<AnimationPlayer>("AnimationPlayer").Play("new_animation");
@@ -49,6 +54,12 @@ public partial class PlayerSprite : CharacterBody2D
 
 
 	}
+
+	private void OnGameOver(GameOverEvent evt)
+	{
+		isEnabled = false;
+        GetNode<Area2D>("Area2D").AreaEntered -= ObjectEntered;
+    }
 
 	private float CheckForSpeedBoost(float Speed) {
 		if (Input.IsKeyPressed(Key.Shift))

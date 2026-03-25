@@ -9,6 +9,8 @@ public partial class objDespawner : Area2D
 	{
 		//this.BodyEntered += ObjectEntered;
 		this.AreaEntered += ObjectEntered;
+
+		GameConfig.Instance.GetBus().Subscribe<GameOverEvent>(OnGameOver);
 		
 
 	}
@@ -22,5 +24,11 @@ public partial class objDespawner : Area2D
 	private void ObjectEntered(Node2D otherBody) {
 		otherBody.Owner.QueueFree();
 		GameConfig.Instance.GetBus().Publish<GameOverEvent>(new GameOverEvent());
+		this.AreaEntered -= ObjectEntered;
+	}
+
+	private void OnGameOver(GameOverEvent gameOverEvent) {
+	
+
 	}
 }
