@@ -19,3 +19,5 @@ mesh = ExtResource("2_r0s66")
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=1589081387]
 transform = Transform3D(1, 0, 0, 0, -4.3711385e-08, 0.99999994, 0, -0.99999994, -4.3711385e-08, 0, 0, 0)
 shape = SubResource("CylinderShape3D_r0s66")
+
+[node name="Line2D" type="Line2D" parent="." unique_id=1658167250]

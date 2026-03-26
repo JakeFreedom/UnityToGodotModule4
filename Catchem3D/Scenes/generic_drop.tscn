@@ -1,6 +1,7 @@
 [gd_scene format=3 uid="uid://vrxbld3dkjlj"]
 
 [ext_resource type="Script" uid="uid://b7kjawoqplrji" path="res://GenericDrop.cs" id="1_v4sfh"]
+[ext_resource type="Script" uid="uid://b1nyhce5ou1s0" path="res://Scenes/Line3D.cs" id="2_1i50u"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_v4sfh"]
 
@@ -13,3 +14,7 @@ script = ExtResource("1_v4sfh")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Area3D" unique_id=41640758]
 shape = SubResource("BoxShape3D_v4sfh")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="." unique_id=1012845545]
+visible = false
+script = ExtResource("2_1i50u")

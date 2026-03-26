@@ -11,8 +11,8 @@
 script = ExtResource("2_1axms")
 dropScene = ExtResource("2_w55ch")
 meshes = Array[Mesh]([ExtResource("3_4fh6u"), ExtResource("4_bp4th"), ExtResource("5_un6rl")])
-maxFallingSpeed = 5.0
-maxRotationalSpeed = 5.0
+maxFallingSpeed = 5
+maxRotationalSpeed = 3
 maxSpawnDelay = 5
 burstSpawnThreshold = 10
 burstSpawnAmount = 8

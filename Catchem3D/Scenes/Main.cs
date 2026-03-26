@@ -1,4 +1,5 @@
 using Godot;
+using System.Numerics;
 
 public partial class Main : Node3D
 {
@@ -8,7 +9,9 @@ public partial class Main : Node3D
 	{
 		GetNode<ControlPlayer>("Player").CollectableCaptured += CollectableCapturedHandler;
 		userUX = GetNode<Ux>("UX");
-	}
+
+
+    }
 
 	private void CollectableCapturedHandler() => userUX.UpdatePlayerScore(1);
 }

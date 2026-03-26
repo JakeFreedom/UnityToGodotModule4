@@ -56,6 +56,7 @@ public partial class SpawnerRing : Node3D
 	{
 		GenericDrop spawnedObject = config.GenericDropScene.Instantiate() as GenericDrop;
 		spawnedObject.Position = spawnPosition;
+		
 		spawnedObject.GenericMesh = config.GenericDropMeshes[rng.RandiRange(0, config.GenericDropMeshes.Length -1)];
 
 		//here is where we need to give its falling speed and rotational speed

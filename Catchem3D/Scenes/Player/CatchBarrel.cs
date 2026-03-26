@@ -20,7 +20,7 @@ public partial class CatchBarrel : Node3D
         {
             EmitSignal(SignalName.CollectableCaptured);
             ((GenericDrop)otherArea.Owner).YouHaveBeenCaptures();
-            otherArea.Owner.QueueFree();
+            //otherArea.Owner.QueueFree();
         }
     }
 }
