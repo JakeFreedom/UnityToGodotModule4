@@ -9,9 +9,16 @@ public partial class Main : Node3D
 	{
 		GetNode<ControlPlayer>("Player").CollectableCaptured += CollectableCapturedHandler;
 		userUX = GetNode<Ux>("UX");
+        //GetNode<Despawn>("Despawn").GameOver += GameOver;
+        GameConfig.Instance.GameOver += GameOver;
 
 
     }
 
-	private void CollectableCapturedHandler() => userUX.UpdatePlayerScore(1);
+    private void CollectableCapturedHandler() => userUX.UpdatePlayerScore(1);
+
+	private void GameOver()
+	{
+		GD.Print("Game Over");
+	}
 }

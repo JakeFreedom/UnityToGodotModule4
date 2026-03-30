@@ -65,7 +65,7 @@ visible = false
 visible = false
 
 [node name="Despawn" type="Area3D" parent="." unique_id=1339081122]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -1.4462471, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 2.688003, 0)
 script = ExtResource("9_hptm8")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="Despawn" unique_id=929350499]

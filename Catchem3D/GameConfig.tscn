@@ -1,0 +1,6 @@
+[gd_scene format=3 uid="uid://d2jso8ui46mrq"]
+
+[ext_resource type="Script" uid="uid://biayd7122yt1q" path="res://GameConfig.cs" id="1_p6hjs"]
+
+[node name="GameConfig" type="Node3D" unique_id=1971531201]
+script = ExtResource("1_p6hjs")

@@ -12,7 +12,8 @@ public partial class SpawnerRing : Node3D
 	List<Node3D> spawnedDropList;
 	Vector3 spawnPosition = Vector3.Zero;
 	int spawnedDrops;
-	
+	Boolean isGameOver = false;
+
 	public override void _Ready()
 	{
 		spawnedDropList = new List<Node3D>();
@@ -23,16 +24,35 @@ public partial class SpawnerRing : Node3D
 		t.Timeout += CreateDrop;
 		AddChild(t);
 		t.Start();
+
+		GameConfig.Instance.GameOver += GameOverHandler;
+
+	}
+	private void GameOverHandler() {
+
+		isGameOver = true;
+		t.Stop();
 	}
 
 
     public override void _Process(double delta)
     {
-		//Iterate the list and give positional data and rotational data to each generic in the list
-		foreach (GenericDrop node in spawnedDropList) {
-			node.Position += new Vector3(0, -node.FallingSpeed * (float)delta, 0); 
-			node.Rotation += new Vector3(0, (float)delta * node.RotationalSpeed, 0);
-        }
+		if (!isGameOver)
+		{
+			//Iterate the list and give positional data and rotational data to each generic in the list
+			foreach (GenericDrop node in spawnedDropList)
+			{
+				node.Position += new Vector3(0, -node.FallingSpeed * (float)delta, 0);
+				node.Rotation += new Vector3(0, (float)delta * node.RotationalSpeed, 0);
+			}
+		}
+		else
+		{
+			foreach(GenericDrop node in spawnedDropList)
+			{
+				node.QueueFree();
+			}
+		}
     }
 
 	private void CreateDrop()
