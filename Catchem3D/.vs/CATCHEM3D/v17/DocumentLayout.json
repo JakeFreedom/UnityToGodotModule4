@@ -3,16 +3,20 @@
   "WorkspaceRootPath": "D:\\Repos\\UnityToGodotModule4\\Catchem3D\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|D:\\Repos\\UnityToGodotModule4\\Catchem3D\\GameConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:GameConfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|d:\\repos\\unitytogodotmodule4\\catchem3d\\scenes\\ux.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|solutionrelative:scenes\\ux.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|d:\\repos\\unitytogodotmodule4\\catchem3d\\scripts\\spawnerring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|solutionrelative:scripts\\spawnerring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|d:\\repos\\unitytogodotmodule4\\catchem3d\\scripts\\controlplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|solutionrelative:scripts\\controlplayer.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|d:\\repos\\unitytogodotmodule4\\catchem3d\\scripts\\spawnerring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|solutionrelative:scripts\\spawnerring.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|d:\\repos\\unitytogodotmodule4\\catchem3d\\gameconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|solutionrelative:gameconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
       "AbsoluteMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|d:\\repos\\unitytogodotmodule4\\catchem3d\\scenes\\despawn.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
@@ -39,10 +43,6 @@
       "RelativeMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|solutionrelative:genericdrop.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|d:\\repos\\unitytogodotmodule4\\catchem3d\\scenes\\ux.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|solutionrelative:scenes\\ux.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
-    },
-    {
       "AbsoluteMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|d:\\repos\\unitytogodotmodule4\\catchem3d\\scenes\\line3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
       "RelativeMoniker": "D:0:0:{8C78BDF0-E725-4B31-87E6-1B727FA99E3B}|Catchem3D.csproj|solutionrelative:scenes\\line3d.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
@@ -54,7 +54,7 @@
       "DocumentGroups": [
         {
           "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "SelectedChildIndex": 4,
           "Children": [
             {
               "$type": "Bookmark",
@@ -62,7 +62,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 1,
+              "DocumentIndex": 2,
               "Title": "ControlPlayer.cs",
               "DocumentMoniker": "D:\\Repos\\UnityToGodotModule4\\Catchem3D\\Scripts\\ControlPlayer.cs",
               "RelativeDocumentMoniker": "Scripts\\ControlPlayer.cs",
@@ -75,7 +75,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 0,
+              "DocumentIndex": 3,
               "Title": "GameConfig.cs",
               "DocumentMoniker": "D:\\Repos\\UnityToGodotModule4\\Catchem3D\\GameConfig.cs",
               "RelativeDocumentMoniker": "GameConfig.cs",
@@ -88,7 +88,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 3,
+              "DocumentIndex": 4,
               "Title": "Despawn.cs",
               "DocumentMoniker": "D:\\Repos\\UnityToGodotModule4\\Catchem3D\\Scenes\\Despawn.cs",
               "RelativeDocumentMoniker": "Scenes\\Despawn.cs",
@@ -96,25 +96,24 @@
               "RelativeToolTip": "Scenes\\Despawn.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABgAAAAdAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T16:16:42.681Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-25T16:16:42.681Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 9,
+              "DocumentIndex": 0,
               "Title": "Ux.cs",
               "DocumentMoniker": "D:\\Repos\\UnityToGodotModule4\\Catchem3D\\Scenes\\Ux.cs",
               "RelativeDocumentMoniker": "Scenes\\Ux.cs",
               "ToolTip": "D:\\Repos\\UnityToGodotModule4\\Catchem3D\\Scenes\\Ux.cs",
               "RelativeToolTip": "Scenes\\Ux.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABAAAAAAAAAAAAAQwBUAAABAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-03-25T15:25:54.332Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 7,
+              "DocumentIndex": 8,
               "Title": "ItemDropper.cs",
               "DocumentMoniker": "D:\\Repos\\UnityToGodotModule4\\Catchem3D\\ItemDropper.cs",
               "RelativeDocumentMoniker": "ItemDropper.cs",
@@ -122,8 +121,7 @@
               "RelativeToolTip": "ItemDropper.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T15:25:42.426Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-25T15:25:42.426Z"
             },
             {
               "$type": "Document",
@@ -139,7 +137,7 @@
             },
             {
               "$type": "Document",
-              "DocumentIndex": 4,
+              "DocumentIndex": 5,
               "Title": "Main.cs",
               "DocumentMoniker": "D:\\Repos\\UnityToGodotModule4\\Catchem3D\\Scenes\\Main.cs",
               "RelativeDocumentMoniker": "Scenes\\Main.cs",
@@ -147,12 +145,11 @@
               "RelativeToolTip": "Scenes\\Main.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAArAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-25T13:50:17.46Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-25T13:50:17.46Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 6,
+              "DocumentIndex": 7,
               "Title": "SpawnerConfig.cs",
               "DocumentMoniker": "D:\\Repos\\UnityToGodotModule4\\Catchem3D\\Resources\\SpawnerConfig.cs",
               "RelativeDocumentMoniker": "Resources\\SpawnerConfig.cs",
@@ -160,12 +157,11 @@
               "RelativeToolTip": "Resources\\SpawnerConfig.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACkAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T00:28:06.43Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-03T00:28:06.43Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 5,
+              "DocumentIndex": 6,
               "Title": "CatchBarrel.cs",
               "DocumentMoniker": "D:\\Repos\\UnityToGodotModule4\\Catchem3D\\Scenes\\Player\\CatchBarrel.cs",
               "RelativeDocumentMoniker": "Scenes\\Player\\CatchBarrel.cs",
@@ -173,12 +169,11 @@
               "RelativeToolTip": "Scenes\\Player\\CatchBarrel.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAABYAAAAOAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-03-03T00:15:21.555Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-03-03T00:15:21.555Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 8,
+              "DocumentIndex": 9,
               "Title": "GenericDrop.cs",
               "DocumentMoniker": "D:\\Repos\\UnityToGodotModule4\\Catchem3D\\GenericDrop.cs",
               "RelativeDocumentMoniker": "GenericDrop.cs",
@@ -186,18 +181,17 @@
               "RelativeToolTip": "GenericDrop.cs",
               "ViewState": "AgIAAAAAAAAAAAAAAAAAACMAAAADAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2026-02-19T01:46:38.319Z",
-              "EditorCaption": ""
+              "WhenOpened": "2026-02-19T01:46:38.319Z"
             },
             {
               "$type": "Document",
-              "DocumentIndex": 2,
+              "DocumentIndex": 1,
               "Title": "SpawnerRing.cs",
               "DocumentMoniker": "D:\\Repos\\UnityToGodotModule4\\Catchem3D\\Scripts\\SpawnerRing.cs",
               "RelativeDocumentMoniker": "Scripts\\SpawnerRing.cs",
               "ToolTip": "D:\\Repos\\UnityToGodotModule4\\Catchem3D\\Scripts\\SpawnerRing.cs",
               "RelativeToolTip": "Scripts\\SpawnerRing.cs",
-              "ViewState": "AgIAACgAAAAAAAAAAAAowDQAAAAJAAAAAAAAAA==",
+              "ViewState": "AgIAACYAAAAAAAAAAAAgwDcAAAAjAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
               "WhenOpened": "2026-02-18T03:26:53.451Z",
               "EditorCaption": ""

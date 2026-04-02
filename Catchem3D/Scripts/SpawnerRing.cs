@@ -48,9 +48,13 @@ public partial class SpawnerRing : Node3D
 		}
 		else
 		{
-			foreach(GenericDrop node in spawnedDropList)
+			List<Node3D> listCopy = new List<Node3D>(spawnedDropList);
+			foreach(GenericDrop node in listCopy)
 			{
 				node.QueueFree();
+				spawnedDropList.Remove(node);
+				if (spawnedDropList.Count == 0)
+					break;
 			}
 		}
     }
