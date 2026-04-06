@@ -76,6 +76,8 @@ public partial class ControlPlayer : CharacterBody3D
 			Velocity = velocity;
 			MoveAndSlide();
 		}
+		else
+			apWalking.Stop();
 	}
 
 	private void CollectableCapturedHandler() {

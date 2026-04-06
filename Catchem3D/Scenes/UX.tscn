@@ -7,12 +7,13 @@ font_size = 24
 
 [sub_resource type="LabelSettings" id="LabelSettings_sit4d"]
 font_size = 24
+outline_color = Color(1, 1, 1, 0)
 
 [sub_resource type="Animation" id="Animation_sit4d"]
 resource_name = "CenterText"
 tracks/0/type = "value"
 tracks/0/imported = false
-tracks/0/enabled = true
+tracks/0/enabled = false
 tracks/0/path = NodePath(".:position")
 tracks/0/interp = 1
 tracks/0/loop_wrap = true
@@ -36,6 +37,45 @@ tracks/1/keys = {
 "method": &"CountDownScore"
 }]
 }
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer:position")
+tracks/2/interp = 2
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-520, 285)]
+}
+
+[sub_resource type="Animation" id="Animation_jry1g"]
+resource_name = "FadePlayerScoreText"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("MarginContainer/HBoxContainer/Score:label_settings:font_color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("MarginContainer/HBoxContainer/PScoreUX:label_settings:font_color")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
 
 [sub_resource type="Animation" id="Animation_osf0u"]
 length = 0.001
@@ -51,12 +91,81 @@ tracks/0/keys = {
 "update": 0,
 "values": [Vector2(0, 0)]
 }
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("HBoxContainer/VBoxContainer/GameOver:label_settings:font_size")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [4500]
+}
+tracks/2/type = "value"
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/path = NodePath("MarginContainer:position")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(0, 0)]
+}
+tracks/3/type = "value"
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/path = NodePath("MarginContainer/HBoxContainer/Score:label_settings:font_color")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+tracks/4/type = "value"
+tracks/4/imported = false
+tracks/4/enabled = true
+tracks/4/path = NodePath("MarginContainer/HBoxContainer/PScoreUX:label_settings:font_color")
+tracks/4/interp = 1
+tracks/4/loop_wrap = true
+tracks/4/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="Animation" id="Animation_0sh8h"]
+resource_name = "ScaleInGameOverText"
+length = 2.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("HBoxContainer/VBoxContainer/GameOver:label_settings:font_size")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 2),
+"transitions": PackedFloat32Array(1, 10.196471),
+"update": 0,
+"values": [4500, 45]
+}
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_0sh8h"]
 _data = {
 &"CenterText": SubResource("Animation_sit4d"),
-&"RESET": SubResource("Animation_osf0u")
+&"FadePlayerScoreText": SubResource("Animation_jry1g"),
+&"RESET": SubResource("Animation_osf0u"),
+&"ScaleInGameOverText": SubResource("Animation_0sh8h")
 }
+
+[sub_resource type="LabelSettings" id="LabelSettings_jry1g"]
+font_size = 4500
 
 [node name="Control" type="Control" unique_id=1423101655]
 layout_mode = 3
@@ -72,7 +181,7 @@ script = ExtResource("1_sit4d")
 layout_mode = 1
 anchors_preset = 10
 anchor_right = 1.0
-offset_bottom = 64.0
+offset_bottom = 64.00009
 grow_horizontal = 2
 theme_override_constants/margin_left = 15
 theme_override_constants/margin_top = 15
@@ -97,3 +206,28 @@ horizontal_alignment = 2
 
 [node name="MoveTextToCenter" type="AnimationPlayer" parent="." unique_id=353004938]
 libraries/ = SubResource("AnimationLibrary_0sh8h")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="." unique_id=967662868]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -11.5
+offset_right = 46.0
+offset_bottom = 11.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer" unique_id=269197679]
+layout_mode = 2
+size_flags_horizontal = 8
+
+[node name="GameOver" type="Label" parent="HBoxContainer/VBoxContainer" unique_id=1788860951]
+visible = false
+layout_mode = 2
+text = "GAME OVER"
+label_settings = SubResource("LabelSettings_jry1g")
+horizontal_alignment = 1

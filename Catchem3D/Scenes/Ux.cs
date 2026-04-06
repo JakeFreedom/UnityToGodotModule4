@@ -28,6 +28,13 @@ public partial class Ux : Control
 				playerScoreLabel.Text = playerScore.ToString();
 				timeDelay = 0;
 			}
+
+			if(playerScore == 0)
+			{
+				//Fade Text
+				centerText.Play("FadePlayerScoreText");
+
+			}
         }
     }
 
@@ -40,9 +47,20 @@ public partial class Ux : Control
 	private void GameOverHandler()
 	{
 		centerText.Play("CenterText");
+        centerText.AnimationFinished += CenterText_AnimationFinished;
+
 	}
 
-	private void CountDownScore()
+    private void CenterText_AnimationFinished(StringName animName)
+    {
+		if (animName == "FadePlayerScoreText")
+		{
+			GetNode<AnimationPlayer>("MoveTextToCenter").Play("ScaleInGameOverText");
+			GetNode<Label>("HBoxContainer/VBoxContainer/GameOver").Visible = true;
+		}
+    }
+
+    private void CountDownScore()
 	{
 		startCountDown = true;
 	}
